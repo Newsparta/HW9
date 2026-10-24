@@ -30,6 +30,7 @@ public class GettingStartedApplication {
 
     @GetMapping("/database")
     String database(Map<String, Object> model) throws SQLException {
+        System.out.println("Rhett Edwards");
         try (Connection connection = dataSource.getConnection()) {
             final var statement = connection.createStatement();
             statement.executeUpdate("CREATE TABLE IF NOT EXISTS table_timestamp_and_random_string (tick timestamp, random_string varchar(50))");
